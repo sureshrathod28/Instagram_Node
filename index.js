@@ -9,7 +9,7 @@ server.use(bodyParser.urlencoded({ limit: '10mb', extended: true }));
 
 main().catch(err=>console.log(err))
 async function main(){
-    await mongoose.connect(process.env.DB_URL)
+    await mongoose.connect("mongodb+srv://root:10xAcademy@cluster0.lkbvqs4.mongodb.net/?retryWrites=true&w=majority")
     console.log("DB Connected")
 }
 const userSchema=new mongoose.Schema({
