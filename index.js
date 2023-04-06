@@ -3,6 +3,7 @@ const cors=require('cors')
 const bodyParser=require('body-parser')
 const server=express()
 const mongoose=require('mongoose')
+
 server.use(cors())
 server.use(bodyParser.json({ limit: '10mb' }));
 server.use(bodyParser.urlencoded({ limit: '10mb', extended: true }));
