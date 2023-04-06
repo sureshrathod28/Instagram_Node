@@ -3,13 +3,14 @@ const cors=require('cors')
 const bodyParser=require('body-parser')
 const server=express()
 const mongoose=require('mongoose')
+
 server.use(cors())
 server.use(bodyParser.json({ limit: '10mb' }));
 server.use(bodyParser.urlencoded({ limit: '10mb', extended: true }));
 
 main().catch(err=>console.log(err))
 async function main(){
-    await mongoose.connect(process.env.DB_URL)
+    await mongoose.connect("mongodb+srv://root:10xAcademy@cluster0.lkbvqs4.mongodb.net/?retryWrites=true&w=majority")
     console.log("DB Connected")
 }
 const userSchema=new mongoose.Schema({
